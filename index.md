@@ -153,30 +153,6 @@ Register link TBA
 
 ---
 
-## 📅 Workshop Schedule (*Tentative*) {#schedule}
-
-<div class="table-wrapper schedule" markdown="block">
-
-|||
-|:-:|--|
-| 1:00 - 1:15 | **Opening Remarks**                   |
-| 1:15 - 2:00 | **Invited Talk**                      |
-| 2:00 - 2:15 | **Award Ceremony**                    |
-| 2:15 - 3:00 | **Oral Presentations by the Winners** |
-| 3:00 - 4:00 | ☕Coffee Break + **Poster Session**   |
-| 4:00 - 4:45 | **Invited Talk**                      |
-| 4:45 - 5:00 | **Closing Remarks**                   |
-
-</div>
-
----
-
-## 💡 Invited Speakers {#speakers}
-
-TBA
-
----
-
 ## 🤩 Organizers {#organizers}
 
 <div class="row">
@@ -240,6 +216,30 @@ TBA
 ## 🤝 Sponsors {#sponsors}
 
 Please drop a message to <efficientmusicgen@gmail.com> if you are interested in sponsoring the EfficientMusicGen Challenge.
+
+---
+
+## 📅 Workshop Schedule (*Tentative*) {#schedule}
+
+<div class="table-wrapper schedule" markdown="block">
+
+|||
+|:-:|--|
+| 1:00 - 1:15 | **Opening Remarks**                   |
+| 1:15 - 2:00 | **Invited Talk**                      |
+| 2:00 - 2:15 | **Award Ceremony**                    |
+| 2:15 - 3:00 | **Oral Presentations by the Winners** |
+| 3:00 - 4:00 | ☕Coffee Break + **Poster Session**   |
+| 4:00 - 4:45 | **Invited Talk**                      |
+| 4:45 - 5:00 | **Closing Remarks**                   |
+
+</div>
+
+---
+
+## 💡 Invited Speakers {#speakers}
+
+TBA
 
 ---
 
