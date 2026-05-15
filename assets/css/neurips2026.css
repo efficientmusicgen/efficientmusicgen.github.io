@@ -1,0 +1,11 @@
+.accent {
+  color: #0064c2;
+}
+
+.accent2 {
+  color: #8E0924;
+}
+
+.schedule tr:nth-child(4), .schedule tr:nth-child(8), .schedule tr:nth-child(12) {
+  background-color: #eee;
+}
