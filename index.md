@@ -135,11 +135,11 @@ Available at TBA
 |-|-|
 | July 6            | Release of standardized dataset, preprocessing and baseline code |
 | August 31         | Leaderboard open                                                 |
-| September 21      | **Registration deadline**                                        |
+| **September 21**  | **Registration deadline**                                        |
 | September 30      | Test prompts released                                            |
-| October 2         | **Stage I audio submission deadline**{:.accent}                  |
+| **October 2**     | **Stage I audio submission deadline**{:.accent}                  |
 | October 9         | Announcement of finalists                                        |
-| October 23        | **Stage II model submission deadline**{:.accent}                 |
+| **October 23**    | **Stage II model submission deadline**{:.accent}                 |
 | November 6        | Announcement of winners                                          |
 | December 11 or 12 | Workshop at NeurIPS 2026                                         |
 
@@ -153,7 +153,7 @@ Register link TBA
 
 ---
 
-## 📅 Workshop Schedule {#schedule}
+## 📅 Workshop Schedule (*Tentative*) {#schedule}
 
 <div class="table-wrapper schedule" markdown="block">
 
