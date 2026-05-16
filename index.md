@@ -135,28 +135,32 @@ The evaluation platform will be based on the [Music Arena](https://music-arena.o
 
 ---
 
-### 🏆 Awards {#awards}
+### 🏆 Awards (*Tentative*) {#awards}
+
+<div style="display: flex; justify-content: space-evenly;">
 
 <div class="box" markdown=1 style="background-color: #def;">
 
-#### Static Evaluation Winners
+#### Static Evaluation
 {:.center}
 
-| 🥇First Prize | 🥈Second Prize | 🥉Third Prize |
-|:-------------:|:--------------:|:-------------:|
-| USD $1,500    | USD $1,000     | USD $500      |
+|:--------------:|:----------:|
+| 🥇First Prize  | USD $1,500 |
+| 🥈Second Prize | USD $1,000 |
+| 🥉Third Prize  | USD $500   |
 
 </div>
 
 <div class="box" markdown=1 style="background-color: #fed;">
 
-#### Live Evaluation Winners
+#### Live Evaluation
 {:.center}
 
-| 🥇First Prize | 🥈Second Prize |
-|:-------------:|:--------------:|
-| USD $1,000    | USD $500       |
+|:--------------:|:----------:|
+| 🥇First Prize  | USD $1,000 |
+| 🥈Second Prize | USD $500   |
 
+</div>
 </div>
 
 ---
@@ -222,9 +226,9 @@ Link: TBA
 | August 31         | Leaderboard open                                                 |
 | **September 21**  | **Registration deadline**                                        |
 | September 30      | Test prompts released                                            |
-| **October 2**     | **Stage I audio submission deadline**{:.accent}                  |
+| **October 2**     | **Stage I audio submission deadline**{:.accent2}                 |
 | October 9         | Announcement of finalists                                        |
-| **October 23**    | **Stage II model submission deadline**{:.accent}                 |
+| **October 23**    | **Stage II model submission deadline**{:.accent2}                |
 | November 6        | Announcement of winners                                          |
 | December 11 or 12 | Workshop at NeurIPS 2026                                         |
 
@@ -239,6 +243,12 @@ Link: TBA
 3. (**Stage II**) If you opt in for the live evaluation, you will need to convert their models into a [docker-based serving format](https://github.com/gclef-cmu/music-arena\#adding-a-new-model) compatible with the Music Arena platform by **October 23**. The final winners will be announced on November 6.
 
 **Register link**: TBA
+
+---
+
+## ❓ Frequently Asked Questions {#faq}
+
+TBA
 
 ---
 
@@ -326,12 +336,6 @@ Please drop a message to <efficientmusicgen@gmail.com> if you are interested in 
 ---
 
 ## 💡 Invited Speakers {#speakers}
-
-TBA
-
----
-
-## ❓ Frequently Asked Questions {#faq}
 
 TBA
 
