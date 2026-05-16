@@ -15,6 +15,7 @@ custom_css: "neurips2026.css"
 - [🎯 Key Principles](#principles)
 - [📜 Competition Rules](#rules)
 - [⚖️ Evaluation Criteria](#evaluation)
+- [🏆 Awards](#awards)
 - [🧑‍💻 Resources](#resources)
 - [⏰ Important Dates](#dates)
 - [🚀 How to Participate](#participate)
@@ -42,7 +43,7 @@ By restricting the training data and model size, the challenge shifts the focus 
 
 ### 🎯 Key Principles {#principles}
 
-- **Data-efficient**: All submitted models must be trained from scratch using a standardized, CC-licensed dataset derived from the MTG-Jamendo corpus, totaling 3,777 hours.
+- **Data-efficient**: All submitted models must be trained from scratch using a standardized, CC-licensed dataset derived from the MTG-Jamendo corpus (55,701 songs, 3,777 hours).
 - **Compute-efficient**: All submitted models must have no more than 500M parameters.
 
 ---
@@ -66,18 +67,30 @@ By restricting the training data and model size, the challenge shifts the focus 
 
 ### ⚖️ Evaluation Criteria {#evaluation}
 
+The challenge consists of two stages:
+
+1. All submitted systems will first be evaluated by objective metrics that measure audio fidelity and prompt adherence.
+2. The top-ranked finalists will then be evaluated by human experts in a listening test.
+
+<div class="box" markdown=1>
+
 #### Stage 1: Objective Evaluation
+{:.center}
 
-- **Fréchet audio distance (FAD) & MAUVE audio divergence (MAD)**
-  - Measures distributional similarity between generated audio and a hidden reference set. Computed using the CLAP-Laion-Music checkpoint music_audioset_epoch_15_esc_90.14.pt as the embedder.
-- **CLAP score**
-  - Evaluates how well the generated audio matches the input text prompt. Computed using the CLAP-Laion-Music checkpoint music_audioset_epoch_15_esc_90.14.pt
-- **Concept coverage score (CCS)**
-  - Each prompt contains M musical concepts (e.g., tempo, instrumentation, style, genre, mood/theme).
-  - Audio Language Models act as blind judges to detect whether each concept is present.
-  - A score of K / M is assigned per prompt and averaged across the evaluation set.
+**Evaluation metrics**:
 
-Example test prompts:
+- **Fréchet audio distance (FAD) & MAUVE audio divergence (MAD)**:
+  FAD and MAD measure the distributional similarity between generated audio and a reference set of real music. We will adopt the [LAION-CLAP-Music](https://github.com/LAION-AI/CLAP) model ([music_audioset_epoch_15_esc_90.14.pt](https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt)). For the reference set, we will use a hidden instrumental subset of MTG-Jamendo that consists of 1,000 randomly sampled tracks.
+- **CLAP score**:
+  The CLAP score measures the semantic alignment between the input prompt and the generated audio, defined as the cosine similarity in the joint embedding space of the CLAP-text and CLAP-audio encoders. We will adopt the [LAION-CLAP-Music](https://github.com/LAION-AI/CLAP) checkpoint ([music_audioset_epoch_15_esc_90.14.pt](https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt)) as the feature extractor.
+- **Concept coverage score (CCS)**:
+  CCS adopts a state-of-the-art large audio language model, Qwen3-Omni [4], as a zero-shot music judge to verify the presence of each individual musical attribute. Specifically, given a test prompt synthesized from a triplet of tags representing genre, instrument, and mood/theme respectively, the concept coverage score assesses what percentage of these target concepts can be detected from the generated audio.
+
+**Score aggregation**:
+
+The final ranking will be determined by the sum of Borda counts across four criteria. All the *M* submissions will first be ranked according to each criteria independently. For each criterion, the best-performing submission will receive *M* points, the second best-performing receiving *M* - 1 points, ..., the worst-performing submission receiving 1 point.
+
+**Example test prompts**:
 
 - **Tags**: rock, electric guitar, energetic\\
   **Caption**: "An energetic rock track driven by a bold electric guitar, pulsing with intensity and raw power."
@@ -86,13 +99,65 @@ Example test prompts:
 - **Tags**: electronic, synthesizer, atmospheric\\
   **Caption**: "A smooth, atmospheric electronic track driven by rich synthesizer layers, creating a serene and immersive soundscape."
 
-Submission Format: 10-sec WAV files, 16 bit, 44.1 kHz, stereo
+**Submission format**:
+
+30-sec WAV files, 16 bit, 44.1 kHz, stereo
+
+</div>
+
+<div class="box" markdown=1>
 
 #### Stage 2: Human Evaluation
+{:.center}
 
-Based on Stage 1 rankings, the Top N teams per track will be invited to the second-stage human evaluation. The Music Arena platform will be used to conduct pairwise (A/B comparison) live evaluation of the systems.
+**Static evaluation**:
 
-Submission Format: Docker image of your model
+The participants will be provided with a list of 100 prompts, and they need to generate and upload the corresponding audio within a (tentatively) 72-hour window. The generated music will then be evaluated by trained human judges on a 5-point Likert scale in terms of the following criteria:
+
+- **Audio fidelity**:
+  Evaluates the technical production quality, signal clarity, and the absence of perceptible digital artifacts or distortion.
+- **Prompt adherence**:
+  Assesses how accurately the generated musical elements, such as instrumentation and genre, correspond to the attributes requested in the text prompt.
+- **Musicality**:
+  Measures intrinsic musical quality, including rhythmic stability, harmonic coherence, structural development, and general listenability.
+- **Overall**:
+  Captures the holistic impression of the generated music by integrating production quality, prompt relevance, and musical appeal into a single overall judgment.
+
+We will recruit the trained human judges through our professional networks. Candidate judges include experts with years of musical training and college students in music programs.
+
+**Live evaluation** (optional participation):
+
+The participants may opt in for a live evaluation. The judges will be able to enter their own prompts, and the outputs will be generated on the fly. This will allow the judges to freely examine the usability and limitations of each candidate system.
+
+The evaluation platform will be based on the [Music Arena](https://music-arena.org/) framework. The participants will need to package their submitted models into a unified [Docker-based serving format](https://github.com/gclef-cmu/music-arena\#adding-a-new-model). Participation in this live evaluation will be optional. Additional awards are available for the live evaluation winners.
+
+</div>
+
+---
+
+### 🏆 Awards {#awards}
+
+<div class="box" markdown=1 style="background-color: #def;">
+
+#### Static Evaluation Winners
+{:.center}
+
+| 🥇First Prize | 🥈Second Prize | 🥉Third Prize |
+|:-------------:|:--------------:|:-------------:|
+| USD $1,500    | USD $1,000     | USD $500      |
+
+</div>
+
+<div class="box" markdown=1 style="background-color: #fed;">
+
+#### Live Evaluation Winners
+{:.center}
+
+| 🥇First Prize | 🥈Second Prize |
+|:-------------:|:--------------:|
+| USD $1,000    | USD $500       |
+
+</div>
 
 ---
 
@@ -131,7 +196,6 @@ Available at TBA
 
 <div class="table-wrapper dates" markdown="block">
 
-|||
 |-|-|
 | July 6            | Release of standardized dataset, preprocessing and baseline code |
 | August 31         | Leaderboard open                                                 |
@@ -149,7 +213,11 @@ Available at TBA
 
 ### 🚀 How to Participate {#participate}
 
-Register link TBA
+1. (**Registration**) To participate in the EfficientMusicGen challenge, you must register by **September 21**. After registration, you will be provided a passphrase to access the public leaderboard and submit entries.
+2. (**Stage I**) For the first stage, you will be provided with a list of test prompts on September 30. You will have 72 hours to run your generation pipeline and submit the generated audio by **October 2**. Finalists who enter the second stage will be announced on October 9.
+3. (**Stage II**) If you opt in for the live evaluation, you will need to convert their models into a [docker-based serving format](https://github.com/gclef-cmu/music-arena\#adding-a-new-model) compatible with the Music Arena platform by **October 23**. The final winners will be announced on November 6.
+
+**Register link**: TBA
 
 ---
 
@@ -223,7 +291,6 @@ Please drop a message to <efficientmusicgen@gmail.com> if you are interested in 
 
 <div class="table-wrapper schedule" markdown="block">
 
-|||
 |:-:|--|
 | 1:00 - 1:15 | **Opening Remarks**                   |
 | 1:15 - 2:00 | **Invited Talk**                      |
