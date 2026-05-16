@@ -56,11 +56,11 @@ By restricting the training data and model size, the challenge shifts the focus 
   - The core generative model is defined as the main component responsible for the mapping from the conditioned text representation (or latent tokens) to the musical representations.
   - The use of pretrained weights for the core generative models is prohibited.
 - **Auxiliary components**: Participants may use publicly available checkpoints for auxiliary components. However, proprietary or non-reproducible auxiliary models are prohibited.
-  – Examples of auxiliary models include:
+  - Examples of auxiliary models include:
     1. Audio tokenizers or autoencoders for neural compression
     2. Large audio language models for automated captioning/tagging for data augmentation
     3. Vocoders or audio enhancement modules for post-processing
-  – Encoders used solely for feature extraction and decoders used for final waveform reconstruction are considered auxiliary models.
+  - Encoders used solely for feature extraction and decoders used for final waveform reconstruction are considered auxiliary models.
 - **Inference**: The inference pipeline must be fully autonomous. Any form of manual editing, human annotation, or cherry-picking of the generated samples is prohibited.
 
 ---
@@ -163,32 +163,53 @@ The evaluation platform will be based on the [Music Arena](https://music-arena.o
 
 ### 🧑‍💻 Resources {#resources}
 
-#### Training Dataset
+<div class="box" markdown=1>
 
-457 hours of CC-licensed instrumental music derived from MTG-Jamendo.
+#### Data
+{:.center}
+
+**Source Dataset**:
+
+You must train the core generative models using the [MTG-Jamendo](https://mtg.github.io/mtg-jamendo-dataset/) dataset.
 
 1. Visit <https://github.com/MTG/mtg-jamendo-dataset>
 2. Follow the README instructions
-3. Download the `raw_30s` subset
+3. Download the full 3,777-hour dataset or the 457-hours subset (`raw_30s`)
 
-#### Reference Caption Sets
+The challenge consider only instrumental music. You may use any vocal removal or source separation model. You may also use the preprocessing code provided below.
 
-Provided to help you get started. Teams may extend these using MTG-Jamendo tags, other annotations, and LLM-based augmentations to create richer training data.
+**Reference caption sets**:
 
-- Reference captions: TBA
-- Captioning pipeline: TBA
+Two reference captions sets are provided. You may extend them using MTG-Jamendo tags, other annotations, and LLM-based data augmentation approaches. The caption generation pipeline is provided below.
 
-#### Preprocessing Code
+Link: TBA
 
-Provided for vocal separation to ensure instrumental-only data
+</div>
 
-Available at TBA
+<div class="box" markdown=1>
 
-#### Baseline Model Code
+#### Code
+{:.center}
 
-Provided to lower the entry barrier and help teams get started quickly
+**Vocal removal**:
 
-Available at TBA
+Code for removing sining voices from the source dataset.
+
+Link: TBA
+
+**Caption generation**:
+
+Code for generating the reference captions.
+
+Link: TBA
+
+**Baseline model**:
+
+Code for a FluxAudio-based baseline model.
+
+Link: TBA
+
+</div>
 
 ---
 
