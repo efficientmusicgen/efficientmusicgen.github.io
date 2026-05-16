@@ -137,7 +137,7 @@ The evaluation platform will be based on the [Music Arena](https://music-arena.o
 
 ### 🏆 Awards (*Tentative*) {#awards}
 
-<div style="display: flex; justify-content: space-evenly;">
+<div class="row boxes">
 
 <div class="box" markdown=1 style="background-color: #def;">
 
