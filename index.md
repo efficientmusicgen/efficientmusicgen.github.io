@@ -19,11 +19,11 @@ custom_css: "neurips2026.css"
 - [🧑‍💻 Resources](#resources)
 - [⏰ Important Dates](#dates)
 - [🚀 How to Participate](#participate)
-- [📅 Workshop Schedule](#schedule)
-- [💡 Invited Speakers](#speakers)
+- [❓ Frequently Asked Questions](#faq)
 - [🤩 Organizers](#organizers)
 - [🤝 Sponsors](#sponsors)
-- [❓ Frequently Asked Questions](#faq)
+- [📅 Workshop Schedule](#schedule)
+- [💡 Invited Speakers](#speakers)
 - [🔄 Previous Iterations](#iterations)
 </details>
 
